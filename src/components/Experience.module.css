@@ -1,0 +1,134 @@
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Left spine */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold-dim), var(--gold-dim) 80%, transparent);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 0 1.25rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--bg-base);
+  box-shadow: 0 0 10px var(--glow-strong);
+  margin-top: 1.6rem;
+  z-index: 1;
+  justify-self: center;
+  flex-shrink: 0;
+  align-self: start;
+}
+
+.line {
+  display: none; /* line handled by ::before on .timeline */
+}
+
+.card {
+  margin-bottom: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.role {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.15rem;
+}
+
+.company {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0 !important;
+}
+
+.client {
+  color: var(--gold-mid);
+  font-style: italic;
+}
+
+.period {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+  letter-spacing: 0.04em;
+}
+
+.summary {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.6;
+}
+
+.bullets {
+  margin-bottom: 0.9rem;
+  padding-left: 0;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+  line-height: 1.55;
+}
+
+.bullets li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--gold-dim);
+  font-size: 0.5rem;
+  top: 0.45em;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .timeline::before { left: 14px; }
+  .entry { grid-template-columns: 30px 1fr; }
+  .header { flex-direction: column; }
+  .period { padding-top: 0; }
+}

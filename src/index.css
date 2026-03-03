@@ -1,0 +1,228 @@
+/* ===================================================
+   WARCRAFT III – INSPIRED THEME: GLOBAL CSS
+   =================================================== */
+
+/* --- CSS Custom Properties (design tokens) --- */
+:root {
+  /* Backgrounds */
+  --bg-base:        #0a0806;
+  --bg-panel:       #150e09;
+  --bg-panel-alt:   #1c1409;
+  --bg-card:        #1e1508;
+  --bg-hover:       #261c0e;
+
+  /* Gold palette */
+  --gold-dim:       #7a5c1e;
+  --gold-mid:       #b8922a;
+  --gold:           #c8a84b;
+  --gold-bright:    #e8c55a;
+  --gold-vivid:     #f0d060;
+
+  /* Text */
+  --text-primary:   #f0e6c8;
+  --text-secondary: #b8a070;
+  --text-muted:     #7a6840;
+  --text-link:      #d4b04a;
+
+  /* Accents */
+  --accent-red:     #9b2828;
+  --accent-blue:    #2a4a7a;
+  --accent-green:   #2a6a3a;
+
+  /* Borders & glows */
+  --border:         #5a441a;
+  --border-bright:  #c8a84b;
+  --glow:           rgba(200, 168, 75, 0.35);
+  --glow-strong:    rgba(200, 168, 75, 0.65);
+  --inner-shadow:   rgba(0, 0, 0, 0.8);
+
+  /* Typography */
+  --font-heading:   'Cinzel', serif;
+  --font-display:   'Cinzel Decorative', cursive;
+  --font-body:      'Crimson Text', serif;
+  --font-ui:        'Inter', sans-serif;
+
+  /* Spacing */
+  --section-gap:    6rem;
+  --card-radius:    4px;
+
+  /* Transitions */
+  --transition:     0.25s ease;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  min-height: 100vh;
+
+  /* Subtle parchment-like background texture using radial gradients */
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(139, 90, 15, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(139, 90, 15, 0.05) 0%, transparent 55%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+}
+
+/* --- Scrollbar Styling (Webkit) --- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--gold-bright);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover { color: var(--gold-vivid); }
+
+p { color: var(--text-secondary); }
+
+ul { list-style: none; }
+
+/* --- Layout helpers --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: var(--section-gap) 0;
+  border-bottom: 1px solid rgba(90, 68, 26, 0.3);
+}
+
+section:last-child { border-bottom: none; }
+
+/* --- WC3 Panel (shared) --- */
+.wc3-panel {
+  background: var(--bg-panel);
+  border: 2px solid var(--gold-dim);
+  border-radius: var(--card-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.wc3-panel::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(200, 168, 75, 0.2);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wc3-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 168, 75, 0.04) 0%,
+    transparent 50%,
+    rgba(0,0,0,0.2) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Gold Rule (horizontal divider) --- */
+.gold-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.gold-rule::before,
+.gold-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+}
+
+/* --- Utility: visually hidden --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+/* --- Tag/badge chip --- */
+.chip {
+  display: inline-block;
+  padding: 0.2em 0.75em;
+  background: rgba(200, 168, 75, 0.1);
+  border: 1px solid var(--gold-dim);
+  border-radius: 3px;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.chip:hover {
+  background: rgba(200, 168, 75, 0.2);
+  border-color: var(--gold);
+}
+
+/* --- Animation: fade-slide-up --- */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+/* --- Responsive helpers --- */
+@media (max-width: 768px) {
+  :root { --section-gap: 4rem; }
+  p { font-size: 1rem; }
+}

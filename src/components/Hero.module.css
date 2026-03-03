@@ -1,0 +1,228 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--gold-dim);
+  overflow: hidden;
+  padding: 4rem 0 6rem;
+}
+
+.glowOrb {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(200,168,75,0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* ---- Crest / Avatar ---- */
+.crest {
+  position: relative;
+}
+
+.avatarRing {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  padding: 4px;
+  background: conic-gradient(
+    var(--gold-dim), var(--gold-bright), var(--gold), var(--gold-dim)
+  );
+  box-shadow: 0 0 30px var(--glow), 0 0 8px var(--glow-strong) inset;
+}
+
+.avatarInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #2d1f0a, #0d0a06);
+  border: 2px solid rgba(200,168,75,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.initials {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--gold-bright);
+  text-shadow: 0 0 20px var(--glow-strong);
+  letter-spacing: 0.1em;
+}
+
+/* ---- Text ---- */
+.text {
+  max-width: 760px;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+  margin-bottom: 0.5rem !important;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--gold-vivid);
+  text-shadow: 0 0 40px rgba(200,168,75,0.5);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--gold-dim);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.dividerLine {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-style: italic;
+  max-width: 660px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ---- Industries ---- */
+.industries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+/* ---- Contacts ---- */
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.contacts li,
+.contacts li a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.contacts li a:hover {
+  color: var(--gold-bright);
+}
+
+.contactIcon {
+  color: var(--gold-mid);
+  display: flex;
+  align-items: center;
+}
+
+/* ---- CTA Buttons ---- */
+.cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: all var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #7a5c1e, #c8a84b, #7a5c1e);
+  background-size: 200% 100%;
+  background-position: right;
+  color: #0d0a06;
+  border: 1px solid var(--gold);
+  box-shadow: 0 0 12px var(--glow);
+  font-weight: 700;
+}
+
+.btnPrimary:hover {
+  background-position: left;
+  box-shadow: 0 0 24px var(--glow-strong);
+  color: #0a0806;
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--gold-bright);
+  border: 1px solid var(--gold-dim);
+}
+
+.btnSecondary:hover {
+  background: rgba(200,168,75,0.1);
+  border-color: var(--gold);
+  color: var(--gold-vivid);
+}
+
+/* ---- Bottom fade overlay ---- */
+.bottomFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--bg-base), transparent);
+  pointer-events: none;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 600px) {
+  .avatarRing { width: 100px; height: 100px; }
+  .initials { font-size: 1.8rem; }
+}

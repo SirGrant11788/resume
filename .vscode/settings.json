@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^unzip -p \"GrantVerheulCvLong\\.docx\" word/document\\.xml 2>/dev/null \\| sed 's/<\\[\\^>\\]\\*>//g' \\| tr -s ' \\\\t\\\\n' ' ' \\| fold -s -w 120 \\| head -200$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

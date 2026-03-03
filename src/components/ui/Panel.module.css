@@ -1,0 +1,46 @@
+.panel {
+  background: var(--bg-panel);
+  border: 2px solid var(--gold-dim);
+  border-radius: var(--card-radius);
+  position: relative;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+/* Inner inset border */
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(200, 168, 75, 0.15);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Top-left and bottom-right corner glints */
+.panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(200, 168, 75, 0.06) 0%, transparent 40%),
+    linear-gradient(315deg, rgba(0,0,0,0.25) 0%, transparent 40%);
+  border-radius: var(--card-radius);
+  pointer-events: none;
+}
+
+.panel:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 16px var(--glow), inset 0 0 8px rgba(200,168,75,0.04);
+}
+
+.glow {
+  box-shadow: 0 0 24px var(--glow-strong), inset 0 0 12px rgba(200,168,75,0.06);
+  border-color: var(--gold);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+}
