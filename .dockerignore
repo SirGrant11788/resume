@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Build output (re-built inside Docker)
+dist/
+
+# Source-control
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# CV source documents (not needed in the image)
+*.docx
+*.odt
+*.pdf
+
+# OS artefacts
+.DS_Store
+Thumbs.db
