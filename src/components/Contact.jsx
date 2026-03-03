@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { personal } from '../data/resume'
+import { downloadCv } from '../utils/downloadCv'
 import SectionTitle from './ui/SectionTitle'
 import Panel from './ui/Panel'
 import styles from './Contact.module.css'
@@ -17,6 +19,12 @@ function IconDownload() {
 }
 
 export default function Contact() {
+  const [generating, setGenerating] = useState(false)
+
+  async function handleDownload() {
+    setGenerating(true)
+    try { await downloadCv() } finally { setGenerating(false) }
+  }
   return (
     <section id="contact">
       <div className="container">
@@ -43,10 +51,14 @@ export default function Contact() {
           </div>
 
           <div className={styles.download}>
-            <a href={personal.cvFile} download className={styles.downloadBtn}>
-              <IconDownload />
-              Download Full CV
-            </a>
+            <button
+              className={styles.downloadBtn}
+              onClick={handleDownload}
+              disabled={generating}
+            >
+              {!generating && <IconDownload />}
+              {generating ? 'Generating PDF…' : 'Download Full CV'}
+            </button>
           </div>
         </Panel>
 

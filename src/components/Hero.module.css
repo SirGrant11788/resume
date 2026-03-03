@@ -167,6 +167,8 @@
 
 .btnPrimary,
 .btnSecondary {
+  appearance: none;
+  -webkit-appearance: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -180,6 +182,12 @@
   transition: all var(--transition);
   cursor: pointer;
   text-decoration: none;
+}
+
+.btnPrimary:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  pointer-events: none;
 }
 
 .btnPrimary {

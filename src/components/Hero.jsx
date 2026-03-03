@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { personal, industryExposure } from '../data/resume'
+import { downloadCv } from '../utils/downloadCv'
 import styles from './Hero.module.css'
 
 function IconMail() {
@@ -35,6 +37,12 @@ function IconLinkedIn() {
 }
 
 export default function Hero() {
+  const [generating, setGenerating] = useState(false)
+
+  async function handleDownload() {
+    setGenerating(true)
+    try { await downloadCv() } finally { setGenerating(false) }
+  }
   return (
     <section className={styles.hero} id="hero">
       {/* Decorative background glow orbs */}
@@ -98,9 +106,13 @@ export default function Hero() {
 
           {/* CTA */}
           <div className={styles.cta}>
-            <a href={personal.cvFile} download className={styles.btnPrimary}>
-              Download CV
-            </a>
+            <button
+              className={styles.btnPrimary}
+              onClick={handleDownload}
+              disabled={generating}
+            >
+              {generating ? 'Generating PDF…' : 'Download CV'}
+            </button>
             <a href="#experience" className={styles.btnSecondary}>
               View Experience
             </a>
