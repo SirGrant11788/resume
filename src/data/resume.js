@@ -7,7 +7,7 @@ export const personal = {
   name: 'Grant Verheul',
   title: 'Senior Software Developer',
   tagline:
-    'Driven, passionate, and ambitious full-stack developer with a wide range of skills and experience across multiple technologies. I use diligence, persistence, and a programmatic approach to develop elegant solutions and explore new avenues of skill. As a team player I am constantly looking to grow both as an individual and alongside a team. In my free time I enjoy building dev playgrounds using old and new tech via a home lab, tinkering with home automation and IoT, creating tech blogs, and mentoring others.',
+    'Driven, passionate, and ambitious full-stack developer with a wide range of skills and experience across multiple technologies. I use diligence, persistence, and a programmatic approach to develop elegant solutions and explore new avenues of skill. As a team player I am constantly looking to grow both as an individual and alongside a team. In my free time I enjoy building dev playgrounds using old and new tech via a home lab, tinkering with home automation and IoT, creating tech blogs, and mentoring others. Always eager to learn and grow — passionate about building innovative solutions to real-world problems.',
   taglineShort:
     'Driven, creative, and always ready for new challenges — with a broad range of technical and soft skills.',
   location: 'Johannesburg, South Africa',
@@ -42,7 +42,7 @@ export const experience = [
     role: 'Senior Full-Stack Developer & Lead',
     period: 'June 2020 – Present',
     summary:
-      'Spearheaded the migration from Atlassian suite to Azure DevOps. Built federated React micro-frontend architecture, custom NPM component libraries, and Java Quarkus BFF services deployed on AWS EKS.',
+      'Worked in a team of 7 to deliver a complete insurance portal using React micro-frontend federation and an integration orchestration layer with custom Java libraries for inter-department integrations, multiple caching mechanisms, and restructured source control and deployment pipelines. Spearheaded the Atlassian → Azure DevOps migration and AWS EKS deployment architecture.',
     bullets: [
       'Portal: React — Host Vite federated frontend with unified OAuth login and Redux Saga shared state, serving multiple auth-role-restricted remote micro-frontends',
       'SRT 1: React — Public-facing indicative insurance quote portal for all product lines via Wildfly Java microservices and Salesforce middleware',
@@ -66,8 +66,8 @@ export const experience = [
     summary:
       'Led two projects from inception to deployment. Delivered a public insurance sales platform (VAPS Online) and rescued a half-complete internal broker portal (New Horizon).',
     bullets: [
-      'VAPS Online: Angular + Node.js — Public-facing reactive insurance policy sales portal supporting multiple whitelabel themes per source company; Node.js backend handles calculations and data manipulation; IBM ORM interfaces with RPG/AS400 backend layer',
-      'New Horizon: Angular — Internal insurance broker platform for selling and managing policies, claims, client profiles, and product lines; project taken on in rescue state and delivered to completion',
+      'VAPS Online (team of 5): Angular + Node.js — Public-facing reactive insurance policy sales portal supporting multiple whitelabel themes per source company; Node.js backend handles calculations and data manipulation; IBM ORM interfaces with RPG/AS400 backend layer',
+      'New Horizon (team of 4): Angular — Internal insurance broker platform for selling and managing policies, claims, client profiles, and product lines; project taken on in rescue state and delivered to completion',
       'Ran deployments, pipeline creation, and DevOps processes for both projects end-to-end',
       'Deployments: Docker + NGINX → Kubernetes cluster',
     ],
@@ -119,7 +119,7 @@ export const experience = [
       'Stock Management POC (Android Java): Native Android version of the stock management tool — also submitted as a university assignment',
       'Ecommerce Website: Built, hosted, and maintained a WordPress / WooCommerce online store with full product catalogue',
       'Brand awareness, online marketing, and import/sales management for NK, Active Tools, Coxmate, and Croker',
-      'Ad hoc: equipment deliveries, transport, rowing boat and kayak repairs, supplier and client management',
+      'Ad hoc: equipment deliveries, transport, rowing boat, kayak, bicycle, and electronic equipment repairs, supplier and client management',
     ],
     stack: ['Flutter', 'Android Java', 'Google Firebase', 'WordPress', 'WooCommerce', 'NoSQL'],
   },
@@ -240,24 +240,24 @@ export const projects = [
     id: 'proj-tih-1',
     title: 'VAPS Online — Insurance Sales Portal',
     description:
-      'Public-facing reactive insurance policy sales portal supporting multiple whitelabel themes per source company. Node.js backend handles calculations and data manipulation; IBM ORM interfaces with an RPG/AS400 backend layer. Deployed via Docker + NGINX to a Kubernetes cluster.',
-    stack: ['Angular', 'Node.js', 'IBM ORM', 'RPG/AS400', 'Docker', 'Kubernetes'],
+      'Team of 5. Public-facing reactive insurance policy sales portal supporting multiple whitelabel themes per source company. Node.js backend handles calculations and data manipulation; IBM ORM interfaces with an RPG/AS400 backend layer. Ran deployments and pipeline creation. Deployed via Docker + NGINX to a Kubernetes cluster.',
+    stack: ['Angular', 'Node.js', 'IBM ORM', 'RPG/AS400', 'Docker', 'Kubernetes', 'CI/CD'],
     type: 'Professional',
   },
   {
     id: 'proj-tih-2',
     title: 'New Horizon — Internal Broker Portal',
     description:
-      'Internal insurance broker platform for selling and managing policies, claims, client profiles, and product lines. Taken on in a rescue state mid-delivery and brought to production completion. Deployed via Docker + NGINX to a Kubernetes cluster.',
-    stack: ['Angular', 'Docker', 'Kubernetes', 'CI/CD'],
+      'Team of 4. Internal insurance broker platform for selling and managing policies, claims, client profiles, and product lines across multiple brands. Taken on in a rescue state mid-delivery and brought to production completion. Ran deployments and pipeline creation. Deployed via Docker + NGINX to a Kubernetes cluster.',
+    stack: ['Angular', 'Node.js', 'Docker', 'Kubernetes', 'CI/CD'],
     type: 'Professional',
   },
   {
     id: 'proj-1',
     title: 'Federated React Platform — MyOMInsure',
     description:
-      'Production micro-frontend architecture using Vite Module Federation with a unified OAuth host, Redux Saga-managed shared state, and multiple auth-restricted remote apps. Deployed via Docker + NGINX to AWS EKS.',
-    stack: ['React', 'Vite', 'Module Federation', 'Redux Saga', 'OAuth', 'Docker', 'AWS EKS'],
+      'Team of 7. Production micro-frontend architecture using Vite Module Federation with a unified OAuth host, Redux Saga-managed shared state, and multiple auth-restricted remote apps. Includes custom Java integration orchestration libraries with multiple caching mechanisms, restructured CI/CD pipelines, and an AWS EKS hosting migration. Deployed via Docker + NGINX to AWS EKS.',
+    stack: ['React', 'Vite', 'Module Federation', 'Redux Saga', 'OAuth', 'Java', 'Docker', 'AWS EKS', 'Azure DevOps'],
     type: 'Professional',
   },
   {
