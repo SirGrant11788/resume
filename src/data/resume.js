@@ -215,7 +215,7 @@ export const education = [
   {
     id: 'edu-5',
     institution: "St John's College",
-    qualification: 'Matric',
+    qualification: 'Matric (High School Graduation)',
     year: '2011',
   },
 ]
